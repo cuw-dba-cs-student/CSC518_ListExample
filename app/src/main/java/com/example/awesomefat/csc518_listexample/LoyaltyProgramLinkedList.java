@@ -1,11 +1,11 @@
 package com.example.awesomefat.csc518_listexample;
 
-public class LinkedListOfCreditCards
-{
-    private CreditCardNode head;
+public class LoyaltyProgramLinkedList {
+
+    private LoyaltyProgramNode head;
     private int count;
 
-    public LinkedListOfCreditCards()
+    public LoyaltyProgramLinkedList()
     {
         this.head = null;
         this.count = 0;
@@ -16,19 +16,19 @@ public class LinkedListOfCreditCards
         return this.count;
     }
 
-    public CreditCard getAtIndex(int index)
+    public LoyaltyProgram getAtIndex(int index)
     {
-        CreditCardNode currNode = this.head;
+        LoyaltyProgramNode currNode = this.head;
         for(int i = 0; i < index; i++)
         {
             currNode = currNode.getNextNode();
         }
-        return currNode.getCard();
+        return currNode.getLylPrg();
     }
 
-    public void addEnd(CreditCard payload)
+    public void addLast(LoyaltyProgram lp)
     {
-        CreditCardNode n = new CreditCardNode(payload);
+        LoyaltyProgramNode n = new LoyaltyProgramNode(lp);
 
         if(this.head == null)
         {
@@ -36,7 +36,7 @@ public class LinkedListOfCreditCards
         }
         else
         {
-            CreditCardNode currNode = this.head;
+            LoyaltyProgramNode currNode = this.head;
 
             while(currNode.getNextNode() != null)
             {

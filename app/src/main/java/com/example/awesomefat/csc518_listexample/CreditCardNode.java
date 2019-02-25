@@ -1,25 +1,25 @@
 package com.example.awesomefat.csc518_listexample;
 
-public class CreditCardNode
-{
-    private CreditCard payload;
-    private CreditCardNode nextNode;
+public class CreditCardNode {
 
-    public CreditCardNode(CreditCard payload)
+    private CreditCard creditCard;
+    private CreditCardNode next;
+
+    public CreditCardNode(CreditCard creditCard)
     {
-        this.payload = payload;
-        this.nextNode = null;
+        this.creditCard = creditCard;
+        this.next = null;
     }
 
-    public void setNextNode(CreditCardNode nextNode) {
-        this.nextNode = nextNode;
+    public CreditCard getCard() {
+        return creditCard;
     }
 
-    public CreditCard getPayload() {
-        return payload;
+    public CreditCardNode getNextNode () {
+        return next;
     }
 
-    public CreditCardNode getNextNode() {
-        return nextNode;
+    public void setNextNode (CreditCardNode nextNode) {
+        this.next = nextNode;
     }
 }

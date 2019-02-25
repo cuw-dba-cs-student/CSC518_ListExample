@@ -45,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
         this.loyaltyProgramLV = (ListView)this.findViewById(R.id.loyaltyProgramListView);
         //Core.ccAdapter = new ArrayAdapter(this, R.layout.student_listview_row, Core.theCreditCardStrings);
         Core.ccCustomAdapter = new CreditCardArrayAdapterForLinkedLists(this, R.layout.custom_credit_card_row, Core.theCreditCardsLL);
-        Core.lpAdapter = new ArrayAdapter(this, R.layout.student_listview_row, Core.theLoyaltyProgramStrings);
+        Core.lpCustomAdapater = new LoyaltyProgramLinkedListArrayAdapter(this,R.layout.custom_loyalty_program_row, Core.)
+        //Core.lpAdapter = new ArrayAdapter(this, R.layout.student_listview_row, Core.theLoyaltyProgramStrings);
 
         this.creditCardLV.setAdapter(Core.ccCustomAdapter);
         this.loyaltyProgramLV.setAdapter(Core.lpAdapter);
