@@ -16,6 +16,9 @@ public class AddCreditCardActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_credit_card);
 
+        // These edit texts are pointers to the edit texts in the activity_add_credit_card.xml layouts.
+        // By setting them at onCreate we only point them once. We could set them in the onSubmit
+        // below and have them point over and over again, but why do that?
         this.creditCardNameET = (EditText)this.findViewById(R.id.creditCardNameET);
         this.creditCardStartDateET = (EditText)this.findViewById(R.id.creditCardStartDate);
         this.creditCardMinSpendET = (EditText)this.findViewById(R.id.creditCardMinSpendET);
@@ -32,7 +35,6 @@ public class AddCreditCardActivity extends AppCompatActivity
 
         CreditCard cc = new CreditCard(creditCardName, creditCardStartDate,
                 creditCardMinSpend,creditCardBonusPoints);
-        cc.display();
         Core.addCreditCard(cc);
         this.finish();
     }

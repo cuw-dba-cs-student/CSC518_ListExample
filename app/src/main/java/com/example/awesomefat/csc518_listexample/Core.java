@@ -4,44 +4,25 @@ package com.example.awesomefat.csc518_listexample;
 public class Core
 {
 
-
-
-    //public static ArrayAdapter<String> ccAdapter, lpAdapter;
-
-    public static LinkedListOfCreditCards theCreditCardsLL = new LinkedListOfCreditCards();
-    public static String[] theCreditCardStrings = new String[1000];
-    public static CreditCard[] theCreditCards = new CreditCard[1000];
+    public static CreditCardsLinkedList theCreditCardsLL = new CreditCardsLinkedList();
+    public static CreditCardArrayAdapterForLinkedLists ccLinkedListAdapter;
     public static int creditCardCount = 0;
-    public static CreditCardArrayAdapterForLinkedLists ccCustomAdapter;
 
-
-
-    public static LoyaltyProgramLinkedList loyaltProgramLinkedList = new LoyaltyProgramLinkedList();
+    public static LoyaltyProgramLinkedList loyaltyProgramLinkedList = new LoyaltyProgramLinkedList();
+    public static LoyaltyProgramLinkedListArrayAdapter lpLinkedListAdapter;
     public static int loyaltyProgramCount = 0;
-    public static LoyaltyProgram[] theLoyaltyPrograms = new LoyaltyProgram[1000];
-    public static String[] theLoyaltyProgramStrings = new String[1000];
 
-
-
-
-
-    //encapsulated
     public static void addLoyaltyProgram(LoyaltyProgram lp)
     {
-        //happens in a static context
-        Core.loyaltProgramLinkedList.addLast(lp);
-        Core.theLoyaltyPrograms[Core.loyaltyProgramCount] = lp;
-        Core.theLoyaltyProgramStrings[Core.loyaltyProgramCount] = lp.toString();
+        Core.loyaltyProgramLinkedList.addLast(lp);
         Core.loyaltyProgramCount++;
-        Core.ccCustomAdapter.notifyDataSetChanged();
+        Core.lpLinkedListAdapter.notifyDataSetChanged();
     }
 
     public static void addCreditCard(CreditCard cc)
     {
         Core.theCreditCardsLL.addEnd(cc);
-        Core.theCreditCards[Core.creditCardCount] = cc;
-        Core.theCreditCardStrings[Core.creditCardCount] = cc.toString();
         Core.creditCardCount++;
-        Core.ccCustomAdapter.notifyDataSetChanged();
+        Core.ccLinkedListAdapter.notifyDataSetChanged();
     }
 }
