@@ -14,14 +14,14 @@
         tools:layout_editor_absoluteY="8dp">
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/addCcBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onAddCreditCardButtonPressed"
             android:text="Add Credit Card" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/addLpBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onAddLoyaltyProgramButtonPressed"

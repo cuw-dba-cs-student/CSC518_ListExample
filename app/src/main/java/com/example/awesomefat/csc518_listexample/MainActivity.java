@@ -23,33 +23,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        LinkedList ll = new LinkedList();
-        for(int i = 0; i < 10; i++)
-        {
-            ll.addEnd(i);
-        }
-
-        for(int i = 0; i < ll.length(); i++)
-        {
-            System.out.println("LL: " + ll.getAtIndex(i));
-        }
-
-        for(int i = 0; i < 1000; i++)
-        {
-            Core.theLoyaltyProgramStrings[i] = "N/A";
-            Core.theCreditCardStrings[i] = "N/A";
-            Core.theCreditCards[i] = new CreditCard();
-        }
-
         this.creditCardLV = (ListView)this.findViewById(R.id.creditCardListView);
         this.loyaltyProgramLV = (ListView)this.findViewById(R.id.loyaltyProgramListView);
-        //Core.ccAdapter = new ArrayAdapter(this, R.layout.student_listview_row, Core.theCreditCardStrings);
-        Core.ccCustomAdapter = new CreditCardArrayAdapterForLinkedLists(this, R.layout.custom_credit_card_row, Core.theCreditCardsLL);
-        Core.lpCustomAdapater = new LoyaltyProgramLinkedListArrayAdapter(this,R.layout.custom_loyalty_program_row, Core.)
-        //Core.lpAdapter = new ArrayAdapter(this, R.layout.student_listview_row, Core.theLoyaltyProgramStrings);
 
-        this.creditCardLV.setAdapter(Core.ccCustomAdapter);
-        this.loyaltyProgramLV.setAdapter(Core.lpAdapter);
+        Core.ccLinkedListAdapter = new CreditCardArrayAdapterForLinkedLists(this, R.layout.custom_credit_card_row, Core.theCreditCardsLL);
+        Core.lpLinkedListAdapter = new LoyaltyProgramLinkedListArrayAdapter(this,R.layout.custom_loyalty_program_row, Core.loyaltyProgramLinkedList);
+
+
+        this.creditCardLV.setAdapter(Core.ccLinkedListAdapter);
+        this.loyaltyProgramLV.setAdapter(Core.lpLinkedListAdapter);
 
     }
 

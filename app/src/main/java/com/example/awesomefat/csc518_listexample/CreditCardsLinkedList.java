@@ -1,11 +1,11 @@
 package com.example.awesomefat.csc518_listexample;
 
-public class LinkedListOfCreditCards
+public class CreditCardsLinkedList
 {
     private CreditCardNode head;
     private int count;
 
-    public LinkedListOfCreditCards()
+    public CreditCardsLinkedList()
     {
         this.head = null;
         this.count = 0;

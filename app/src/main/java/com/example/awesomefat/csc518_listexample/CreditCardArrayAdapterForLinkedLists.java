@@ -12,11 +12,11 @@ import android.widget.TextView;
 public class CreditCardArrayAdapterForLinkedLists extends ArrayAdapter
 {
     private Context mContext;
-    private LinkedListOfCreditCards creditCardList;
+    private CreditCardsLinkedList creditCardList;
     private int textViewResourceId;
 
     public CreditCardArrayAdapterForLinkedLists(Context context, int textViewResourceId,
-                                                LinkedListOfCreditCards list)
+                                                CreditCardsLinkedList list)
     {
         super(context, textViewResourceId);
         this.mContext = context;
